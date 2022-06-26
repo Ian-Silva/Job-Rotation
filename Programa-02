@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Programa02 {
+	public static void main(String [] args) {
+		
+		Scanner scr = new Scanner(System.in);
+		int fib = 0,quant;
+		int [] anterior = new int[10000];
+		int [] proximo = new int[10000];
+		int [] fibbonaci = new int[10000];
+		int capturado = 0;
+		
+		System.out.println("Informe a quantidade do fibbonaci: ");
+		quant = scr.nextInt();
+		
+		for(int i = 0; i < quant; i++) {
+			if(i < 2) {
+				fibbonaci[i] = i;
+			}
+			if(i >= 2) {
+				fibbonaci[i] = fibbonaci[i-2] + fibbonaci[i-1];
+			}
+		}
+		
+		for(int i = 0; i < quant; i++) {
+			if(quant == fibbonaci[i]) {
+				capturado = 1;
+			}
+			System.out.println("Fibbonaci: "+fibbonaci[i]);
+		}
+		
+		if(capturado == 1) {
+			System.out.println("O valor informado pertence a sequencia de Fibonacci!!");
+		}else {
+			System.out.println("O valor informado não pertence a sequencia de Fibonacci..");
+		}
+		
+	}
+}
